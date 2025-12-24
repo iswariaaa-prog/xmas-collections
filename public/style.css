@@ -89,16 +89,25 @@ h2 {
 /* -------------------------------
    MOBILE TWEAK
 ---------------------------------*/
+
 @media (max-width: 480px) {
   h2 {
     font-size: 1.6rem;
+    margin: 15px 5px;
   }
-
-  .gallery img {
-    height: 120px;
+.gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    padding: 10px;
   }
-
+  .gallery img,
   .gallery video {
-    height: 160px;
+    aspect-ratio: 16/9; /* maintain correct proportions */
+    border-radius: 10px;
+  }
+
+.gallery img:hover,
+  .gallery video:hover {
+    transform: scale(1.08);
   }
 }
