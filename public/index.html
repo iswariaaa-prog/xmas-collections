@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Merry Christmas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+
+  <h1>🎄 Merry Christmas 🎅</h1>
+  <p>Click below to see our memories ✨</p>
+
+  <button onclick="openGallery()">📸 View Gallery</button>
+
+  <script>
+    function openGallery() {
+      window.location.href = "gallery.html";
+    }
+
+
+    const snowContainer = document.querySelector('.snow');
+
+function createSnowflake() {
+  const snowflake = document.createElement('div');
+  snowflake.classList.add('snowflake');
+  snowflake.textContent = '❄';
+  snowflake.style.left = Math.random() * window.innerWidth + 'px';
+  snowflake.style.fontSize = (Math.random() * 20 + 10) + 'px';
+  snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
+  snowflake.style.opacity = Math.random();
+  snowContainer.appendChild(snowflake);
+
+  setTimeout(() => snowflake.remove(), 10000);
+}
+
+setInterval(createSnowflake, 200);
+
+  </script>
+
+  <!-- Snow container -->
+<div class="snow"></div>
+
+
+</body>
+</html>
